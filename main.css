@@ -1,0 +1,418 @@
+/* TOC
+1.GOOGLE FONTS
+2.VARIABLES CSS 
+3. BASE
+4. THEME
+5. Reusable CSS
+6. Button
+7.Navbar
+
+*/
+
+/*=============== 1.GOOGLE FONTS ===============*/
+/* @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500&family=Montserrat:ital,wght@0,500;1,500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500&family=Montserrat:ital,wght@0,500;1,500&family=Playfair+Display:wght@500&family=Satisfy&display=swap");
+/*=============== 2.VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(49.89, 100%, 81.37%);
+  --bg-color: linear-gradient(145deg, #e6d8b3, #feffd5);
+  --title-color: hsl(39.87, 73.08%, 59.22%);
+  --second-color: hsl(46, 100%, 85%);
+  --text-color: hsl(201.18, 22.67%, 14.71%);
+  --text-color-light: hsl(189.23, 5.35%, 47.65%);
+  --text-color-light-2: hsl(345, 25%, 97%);
+  --body-color: hsl(37.5, 57.14%, 97.25%);
+  --body-color2: hsl(196.36, 47.83%, 95.49%);
+  --border-color: hsl(0, 3.57%, 32.94%);
+  --button-color: hsla(208, 12%, 75%, 0.768);
+  --button-color2: hsl(46.45, 77.5%, 84.31%);
+  --button-color-hover: hsl(196, 10%, 77%);
+  --container-color: hsl(36.92, 41.94%, 93.92%);
+  --hue-value-1: 0;
+  --shadow: 0 0 10px hsl(var(--hue-value-1), 40%, 90%);
+  --shadow-inset: inset -2px 1px 31px -3px rgba(179, 165, 84, 0.26);
+  --gray-color: hsla(0, 0%, 94%, 0.658);
+  --section-bg1: linear-gradient(
+    to bottom,
+    hsl(36.92, 41.94%, 93.92%),
+    hsl(37.5, 57.14%, 97.25%)
+  );
+  --section-bg2: linear-gradient(
+    to bottom,
+    hsl(37.5, 57.14%, 97.25%),
+    hsl(36.92, 41.94%, 93.92%)
+  );
+  --section-bg3: linear-gradient(
+    to top,
+    hsl(36.92, 41.94%, 93.92%),
+    hsl(37.5, 57.14%, 97.25%)
+  );
+  --section-bg4: linear-gradient(
+    to top,
+    hsl(37.5, 57.14%, 97.25%) 0%,
+    hsl(36.92, 41.94%, 93.92%) 70%,
+    hsl(36.92, 41.94%, 93.92%) 70%,
+    hsl(37.5, 57.14%, 97.25%) 100%
+  );
+  --section-bg5: linear-gradient(
+    to top,
+    hsl(36.92, 41.94%, 93.92%) 0%,
+    hsl(37.5, 57.14%, 97.25%) 50%,
+    hsl(37.5, 57.14%, 97.25%) 50%,
+    hsl(36.92, 41.94%, 93.92%) 100%
+  );
+  --section-bg6: linear-gradient(
+      to bottom,
+      hsl(37.5, 57.14%, 97.25%),
+      rgba(251, 225, 175, 0.503),
+      hsl(37.5, 57.14%, 97.25%)
+    ),
+    var(--gradient-color);
+  /* Change the first number */
+
+  --gradient-color: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  --gradient-color2: linear-gradient(135deg, #e9e7e5dd 0%, #f5f7fa 100%);
+  --gradient-color3: linear-gradient(
+    180deg,
+    hsla(207, 48%, 72%, 0.214),
+    rgb(255, 238, 140)
+  );
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  /* --title-font: "Lora", serif; */
+  --title-font: "Playfair Display", serif;
+  --biggest-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-transition-duration: 800ms;
+  --card-transition-easing: ease;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --tiny-font-size: 0.688rem;
+  }
+}
+
+/*=============== 3. BASE ===============*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+a:hover,
+.btn-color:hover {
+  color: var(--title-color);
+  transition: ease-out 0.3s;
+  /* cursor: url("assets/img/point.png"), pointer; */
+}
+
+/*------- remove arrow input type number ----------*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: var(--body-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--button-color2);
+  border-radius: 0.5rem;
+}
+
+/*=============== 4. THEME ===============*/
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.h-line {
+  width: 150px;
+  margin: 0 auto 30px;
+  height: 1.7px;
+  background: var(--title-color);
+}
+.s-line {
+  width: 100px;
+}
+/* input[type="date"],
+input[type="checkbox"],
+select,
+.form-select option {
+  cursor: url("./assets/img/cursor (2).png"), auto !important;
+}
+*/
+/* Reset cursor for select dropdown arrow */
+/* select::-ms-expand {
+  cursor: pointer;
+} */
+
+/*=============== 5.REUSABLE CSS CLASSES ===============*/
+.c_main {
+  margin-top: 8.5rem;
+}
+.modal-bg {
+  background-color: var(--body-color);
+}
+.container-bg {
+  background: var(--container-color);
+}
+.inset-card {
+  box-shadow: var(--shadow-inset);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.mini-title {
+  color: var(--title-color);
+  /* font-family: var(--title-font); */
+  font-weight: var(--font-medium);
+}
+.brand-name {
+  color: var(--title-color);
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+}
+.font-t {
+  font-family: var(--title-font);
+}
+.t-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mouse-down {
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  position: absolute;
+  bottom: 20%;
+  left: 40%;
+  color: var(--title-color);
+  transition: all 0.3s ease;
+}
+.mouse-down i {
+  font-size: 1.5rem;
+}
+.mouse-down p {
+  font-size: 0.8rem;
+}
+.section-divider {
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.section-divider .s_d_line {
+  width: 36%;
+  pointer-events: none;
+  margin: auto;
+}
+.section-divider i {
+  font-size: 1.6rem;
+  color: var(--title-color);
+}
+/*=============== 6.Button ===============*/
+button {
+  text-transform: uppercase !important;
+}
+.btn-color {
+  color: var(--text-color);
+}
+.custom-bg {
+  background: var(--bg-color);
+  transition: background 0.3s ease;
+}
+.dropdown-menu:hover {
+  background: var(--gradient-color2);
+}
+.miniheader .dropdown-menu .dropdown-item:hover {
+  transition: background ease-out 0.4s;
+}
+.btn-color2 {
+  background-color: var(--button-color2);
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
+  border-radius: 2rem;
+  padding: 6px;
+  width: 100px;
+
+  transition: background ease-out 0.4s;
+}
+
+.btn-color2:hover {
+  background-color: var(--second-color);
+  color: var(--text-color);
+  font-weight: 600;
+}
+.btn-reset {
+  background: var(--button-color);
+  border-radius: 2rem;
+  transition: background ease-out 0.4s;
+}
+.btn-reset:hover {
+  background: var(--button-color-hover);
+  color: var(--text-color);
+  font-weight: 600;
+}
+.custom-btn {
+  text-transform: uppercase;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: var(--normal-font-size);
+  background: var(--bg-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
+  border-radius: 2rem;
+  height: 2rem;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  position: relative;
+  width: 140px;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+.custom-btn:hover,
+.custom-btn:focus {
+  margin-bottom: 6px;
+  background: var(--button-color2);
+}
+.custom-btn::before {
+  content: "";
+  border-radius: 2rem;
+  border: 2px solid var(--button-color2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  z-index: -1;
+}
+
+.custom-btn:hover::before,
+.custom-btn:focus::before {
+  opacity: 1;
+  width: calc(100% + 10px); /* border width on hover */
+  height: calc(100% + 10px); /* border height on hover */
+}
+.custom-btn:hover::after,
+.custom-btn:focus::after {
+  display: none;
+}
+
+
+/*=============== 7.NavBar ===============*/
+.nav-link,
+.nav-link2 {
+  color: var(--text-color-light);
+}
+.nav-link:hover {
+  color: var(--title-color);
+}
+
+.nav-link.nav-active {
+  color: var(--title-color);
+}
+/*=============== 8.GSAP ===============*/
+.grow-tagline {
+  transform: translateY(60px);
+}
+
+.grow {
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.shrink {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+.shrink2 {
+  transform: scale(1.4);
+  transition: transform 0.3s ease;
+}
+
+.shrink-tagline {
+  transform: translateY(80px);
+}
