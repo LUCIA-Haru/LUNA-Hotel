@@ -1,4 +1,4 @@
-# LUNA-Hotel Reservation System Project Using PHP & MySQL With DSDM 🏨🛍️
+# LUNA-Hotel Reservation System Project Using PHP + JS(Ajax) & MySQL With DSDM 🏨🛍️
 
 ## Pages
 
