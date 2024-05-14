@@ -43,6 +43,7 @@
 - Room Details
 - Reservation Process
 - PayPal Gateway for Payment
+- Responsive to different devices
 
 ### Authentication & Security
 
