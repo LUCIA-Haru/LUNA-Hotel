@@ -1,4 +1,5 @@
-# LUNA-Hotel Reservation System Project Using PHP + JS(Ajax) & MySQL With DSDM 🏨🛍️
+# LUNA-Hotel Reservation System Project Using PHP & MySQL With DSDM 🏨🛍️
+
 
 ## Pages
 
@@ -43,7 +44,6 @@
 - Room Details
 - Reservation Process
 - PayPal Gateway for Payment
-- Responsive to different devices
 
 ### Authentication & Security
 
@@ -60,8 +60,21 @@
 ### Integrations
 
 - SendGrid Integration
-- PayPal Gateway
-- Mpdf
-- GSAP
-- Swiper
-- Bootstrap
+
+## Testing
+
+The system has been tested thoroughly using both black-box and white-box testing methodologies to ensure robust functionality, security, and user experience. 
+
+### Black-Box Testing
+
+- Focused on the functionality of the system without looking at the internal code structure.
+- Verified all user-facing features and functionalities.
+- Ensured that the system meets the specified requirements.
+
+### White-Box Testing
+
+- Examined the internal structures or workings of the system.
+- Tested the flow of inputs and outputs through the code.
+- Ensured that all internal operations are performed according to the specifications.
+
+
