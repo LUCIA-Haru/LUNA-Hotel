@@ -60,6 +60,11 @@
 ### Integrations
 
 - SendGrid Integration
+- Mpdf
+- Paypal Gateway
+- Boostrap
+- GSAP
+- Swiper
 
 ## Testing
 
