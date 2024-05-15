@@ -56,6 +56,7 @@
 - Validations for Age, Phone, Email, Password, etc.
 - Email Verification
 - Password Encryption
+- Various Validations against User Input
 
 ### Integrations
 
